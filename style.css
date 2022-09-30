@@ -1,0 +1,182 @@
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans',sans-serif;
+    color: white;
+}
+
+
+
+.sidebar{
+    background-color: #0a1014;
+    position: fixed;
+    width: 410px;
+    height: 100%;
+    padding: 20px 0;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease-in;
+    display: inline-block;
+}
+
+.myDetails{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 1rem;
+}
+
+.image img{
+    margin: 0 auto;
+    display: block;
+    width: 5rem;
+    border-radius: 50%;
+    height: auto;
+}
+
+.paragraphText{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+.contact{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 72px;
+    border-top: 1.5px solid #423e3e;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.contact:last-child {
+    border-bottom: 1px solid #423e3e;
+}
+.contact:hover{
+    background-color: #4b6e6e;
+}
+
+.img img{
+    margin: 0 auto;
+display: block;
+width: 3rem;
+border-radius: 50%;
+height: auto;
+}
+
+h3{
+    font-size:2 rem ;
+    font-weight: 600;
+}
+
+
+ .paragraphText1{
+    /* border-bottom-style: solid;
+    border-width: thin;
+    border-color: darkgray; */
+    border: 300px;
+ }
+
+
+.chatArea {
+    position: absolute;
+    top: 0;
+     left: 410px; 
+    width: calc(100% - 410px);
+    height: 100%;
+    background-color: #CCC;
+}
+
+.chatBar{
+    height: 60px;
+    background-color: #EEE;
+    border-left: 1px solid #DDD;
+    background-color: #3b4a54;
+
+}
+
+.chatBar p{
+    margin: 0;
+    float: right;
+    margin-left: 20px;
+    color: white;
+}
+
+#contactInfo{
+    display: flex;
+    margin-left: 5px;
+}
+
+#contactInfo .contactName{
+     font-size: 16px;
+    height: 60px;
+    line-height: 60px;
+}
+
+#msgContainer{
+    background-color: #844a08;
+    height: calc(100% - 120px);
+    position: relative;
+}
+
+#msgContainer p{
+    margin: 0;
+}
+
+.chatMsg{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    padding: 30px 80px;
+    box-sizing: border-box;
+}
+
+.chatMsg p{
+    display: block;
+    color: white;
+    font-size: 14px;
+    padding: 7px;
+    border-radius: 7px;
+    position: relative;
+    width: 200px;
+}
+
+.sentMsg {
+    background-color:#0a1014;;
+}
+
+.sentMsg:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 17px solid transparent;
+    border-right: 17px solid #0a1014;;
+    position: absolute;
+    top: 0;
+    left: -10px;
+}
+
+.recievedMsg{
+    background-color: #DCF8C6;
+    float: right;
+}
+
+.recievedMsg:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 17px solid transparent;
+    border-left: 17px solid #DCF8C6;
+    position: absolute;
+    top: 0;
+    right: -10px;
+}
