@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet"  type="text/css" href="style.css">
+    
 </head>
 <body>
     <div class="container">
@@ -109,11 +111,12 @@
                 </div>
 
                 <ul id="chatOptions">
-                    <li></li>
-                    <li></li>
+                    <li><i class="fa-solid fa-phone"></i></li>
+                    <li><i class="fas fa-ellipsis-v"></i></li>
                 </ul>
 
             </nav>
+           
 
             <div id="msgContainer">
                     <div class="chatMsg">
@@ -123,8 +126,11 @@
             </div>
 
             <div class="inputMsg">
-                <input type="text" name="Message" placeholder="Type a message">
+                <input type="text" name="Message" id="userInput" placeholder="Type a message">
+                <i class="fa-sharp fa-solid fa-arrow-right"></i>
+
             </div>
+
         </main>
 
         

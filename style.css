@@ -60,7 +60,7 @@
     border-bottom: 1px solid #423e3e;
 }
 .contact:hover{
-    background-color: #4b6e6e;
+    background-color: #423e3e;
 }
 
 .img img{
@@ -88,7 +88,7 @@ h3{
 .chatArea {
     position: absolute;
     top: 0;
-     left: 410px; 
+    left: 410px; 
     width: calc(100% - 410px);
     height: 100%;
     background-color: #CCC;
@@ -96,10 +96,10 @@ h3{
 
 .chatBar{
     height: 60px;
-    background-color: #EEE;
-    border-left: 1px solid #DDD;
-    background-color: #3b4a54;
-
+    border-left: 1px solid #423e3e;
+    background-color: #0a1014;
+    display: flex;
+   justify-content: space-between;
 }
 
 .chatBar p{
@@ -118,6 +118,21 @@ h3{
      font-size: 16px;
     height: 60px;
     line-height: 60px;
+}
+
+#chatOptions {
+    float: right;
+    height: 60px;
+    line-height: 60px;
+    margin-right: 10px;
+}
+
+#chatOptions li {
+    display: inline-block;
+    margin: 0 15px 0 15px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
 }
 
 #msgContainer{
@@ -159,14 +174,14 @@ h3{
     width: 0;
     height: 0;
     border-bottom: 17px solid transparent;
-    border-right: 17px solid #0a1014;;
+    border-right: 17px solid #0a1014;
     position: absolute;
     top: 0;
     left: -10px;
 }
 
 .recievedMsg{
-    background-color: #DCF8C6;
+    background-color: #0a1014;
     float: right;
 }
 
@@ -175,8 +190,45 @@ h3{
     width: 0;
     height: 0;
     border-bottom: 17px solid transparent;
-    border-left: 17px solid #DCF8C6;
+    border-left: 17px solid #0a1014;
     position: absolute;
     top: 0;
     right: -10px;
 }
+
+.inputMsg {
+    background-color: #0a1014;
+    border-left: 1px solid #423e3e;
+    height: 60px;
+    padding: 0 20px 0 20px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+}
+
+#userInput {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color:#423e3e;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    padding-left: 20px;
+    width: calc(89% - 20px);
+    font-size: 16px;
+}
+
+.inputMsg i {
+    font-size: 24px;
+    color: white;
+    right: 10px;
+    
+    height: 60px;
+    line-height: 60px;
+    position: absolute;
+    padding-right: 20px;
+}
+
+
+
