@@ -14,127 +14,160 @@
 
         <aside class="sidebar">
 
-            <div class="myDetails">
+
+            <div class="my-details">
 
                 <div class="image">
                     <img src="Assets/chima.jpg" alt="chima">
                 </div>
 
-                <div class="paragraphText">
+                <div class="name-paragraph">
                     <h3>CHIMA</h3>
                 </div>
 
             </div>
 
-            <div class="contact">
+            <div class="contact-container">
 
-                <div class="img">
-                    <img src="Assets/rachael.png" alt="image1">
-                </div>
+                <div class="contact">
 
-                <div class="paragraphText1">
-                    <h3>RACHAEL KINGS </h3>
-                    <p>Work was good, how are you?</p>
-                </div>
+                    <div class="img">
+                        <img src="Assets/rachael.png" alt="image1">
+                    </div>
+
+
+                    <div class="paragraph-text">
+                        <h3>RACHAEL KINGS </h3>
+                        <p>Work was good, how are you?</p>
+                    </div>
                    
-            </div>
+                </div>
 
         
-            <div class="contact">
-
-                    <div class="img">
-                        <img src="Assets/adaeze.png" alt="image2">
-                    </div>
-                        
-                    <div class="paragraphText1">
-                        <h3>ADAEZE UGO </h3>
-                        <p>JHGFGHJK</p>
-                    </div>
-
-            </div>
-    
-                                    
-            <div class="contact">
+                <div class="contact">
 
                         <div class="img">
-                            <img src="Assets/bisola.png" alt="image3">
+                            <img src="Assets/adaeze.png" alt="image2">
                         </div>
-                           
-                        <div class="paragraphText1">
-                            <h3>BISOLA ADAMS </h3>
-                            <p>FGLJHGFGHJK</p>
+                            
+                        <div class="paragraph-text">
+                            <h3>ADAEZE UGO </h3>
+                            <p>JHGFGHJK</p>
                         </div>
 
-            </div>
+                </div>
+        
+                
+                                    
+                <div class="contact">
+
+
+                         <div class="img">
+                                <img src="Assets/bisola.png" alt="image3">
+                            </div>
+                            
+                            <div class="paragraph-text">
+                                <h3>BISOLA ADAMS </h3>
+                                <p>FGLJHGFGHJK</p>
+                            </div>
+
+                </div>
+                
+                <div class="contact">
+
+                    <div class="img">
+                        <img src="Assets/segun.png" alt="image4">
+                    </div>
+                            
+                    <div class="paragraph-text">
+                        <h3>SEGUN OBI  </h3>
+                        <p>FGLJHGFGHJK</p>
+                    </div>
+
+                </div>
+                
+                
+                <div class="contact">
+
+                    <div class="img">
+                        <img src="Assets/tarzan.png" alt="image5">
+                    </div>
+                    
+                    <div class="paragraph-text">
+                        <h3>TARZAN BALL </h3>
+                        <p class="last-msg">How are you</p>
+                    </div>
+
+                </div>
+                                    
+            </div>  
             
-            <div class="contact">
-
-                <div class="img">
-                    <img src="Assets/segun.png" alt="image4">
-                </div>
-                           
-                <div class="paragraphText1">
-                    <h3>SEGUN OBI  </h3>
-                    <p>FGLJHGFGHJK</p>
-                </div>
-
-            </div>
-            
-            
-            <div class="contact">
-
-                <div class="img">
-                    <img src="Assets/tarzan.png" alt="image5">
-                </div>
-                   
-                <div class="paragraphText1">
-                    <h3>TARZAN BALL </h3>
-                    <p>How are you</p>
-                </div>
-
-            </div>
-                                  
-                  
         </aside>
 
-        <main class="chatArea">
+        <main class="main-section">
 
-            <nav class="chatBar">
-
-                <div id="contactInfo">
-                    <div class="img">
-                        <img src="Assets/rachael.png" alt="rachael">
+            <div class="main-page">
+                
+                <div class="default-page">
+                    <div class="first-display">
+                        <h2>Welcome to LetsTalk</h2>
                     </div>
-                    <p class="contactName">
-                        RACHAEL KINGS
-                    </p>
+                </div> 
+
+                <div class="chat-area">
+                    <nav class="chat-bar">
+                        <div class="back-arrow">
+                            <button class="back-btn"><i class="fa-solid fa-arrow-left"></i></button>
+                        </div>
+                        <div class="contact-info">
+                            <div class="img">
+                                <img src="Assets/rachael.png" alt="rachael">
+                            </div>
+                            <p class="contact-name">
+                                RACHAEL KINGS
+                            </p>
+                        </div>
+
+                        <ul id="chat-options">
+                            <li><i class="fa-solid fa-phone"></i></li>
+                            <li><i class="fas fa-ellipsis-v"></i></li>
+                        </ul>
+                    </nav>
+                           
+                    <div id="msg-container">
+                        <div class="chat-msg">
+                            <p class="received-msg">How was work today?</p>
+                            <p class="sent-msg">Work was good, how are you?</p>
+                        </div>
+                    </div>
+
+                    <form class="input-msg">
+                        <input type="text"  id="user-input" placeholder="Type a message">
+                        <button type="submit" class="btn"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
+                    </form>
                 </div>
-
-                <ul id="chatOptions">
-                    <li><i class="fa-solid fa-phone"></i></li>
-                    <li><i class="fas fa-ellipsis-v"></i></li>
-                </ul>
-
-            </nav>
-           
-
-            <div id="msgContainer">
-                    <div class="chatMsg">
-                        <p class="sentMsg">How was work today?</p>
-                        <p class="recievedMsg">Work was good, how are you?</p>
-                    </div>
             </div>
-
-            <div class="inputMsg">
-                <input type="text" name="Message" id="userInput" placeholder="Type a message">
-                <i class="fa-sharp fa-solid fa-arrow-right"></i>
-
+            
+            <div class="contact-details">
+                <button class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+                <div class="info-bar">
+                    <div class="details-img">
+                        <img src="Assets/rachael.png" alt="RACHAEL">
+                    </div>
+    
+                    <div class="details-text">
+                        <h3 class="user-name"> RACHAEL</h3>
+                        <p class="user-number">08033913208</p>
+                    </div>
+                </div>
             </div>
 
         </main>
-
-        
+         
     </div>
     
+    <script src="script.js" type="module"></script>
+    <script src="contacts.json" type="module"></script>
+    <script src="messages.json" type="module"></script>
 </body>
 </html>

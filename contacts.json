@@ -1,0 +1,15 @@
+{ "myContact": [ 
+    {"image": "Assets/rachael.png", "name":"RACHAEL KINGS", "id":"1", "pNumber": "o8o33913208"},
+    {"image": "Assets/adaeze.png", "name": "ADAEZE UGO", "id":"2", "pNumber": "o8o33656788"},
+    {"image": "Assets/bisola.png", "name": "BISOLA ADAMS", "id":"3", "pNumber": "o8o33912985" },
+    {"image": "Assets/segun.png", "name": "SEGUN OBI", "id":"4", "pNumber": "o8174013208"}, 
+    {"image": "Assets/tarzan.png", "name":"TARZAN BALL", "id":"5", "pNumber": "o8o3391934" },
+    {"image": "Assets/angel.jpg", "name": "ANGEL", "id":"6", "pNumber": "o9148913208"},
+    {"image": "Assets/ebi.jpg", "name": "EBI ZIDAFAMOR", "id":"7", "pNumber": "o90358913208" },
+    {"image": "Assets/minka.jpg", "name": "MINKA ", "id":"8", "pNumber": "o8184713208"}, 
+    {"image": "Assets/monye.jpg", "name": "MONYE", "id":"9", "pNumber": "o88385913208" },
+    {"image": "Assets/sama.jpg", "name": "SAMA", "id":"10", "pNumber": "o9475913208"}
+
+]
+}
+
