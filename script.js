@@ -9,9 +9,26 @@ const inputArray = []
 const loggedInUserId = "0"
 let chatArea = document.querySelector(".chat-area");
 let sideBar = document.querySelector(".sidebar")
-let smartPhones = window.matchMedia("(max-width: 600px)")
-let backArrow = document.querySelector(".back-arrow")
+let smartPhones = window.matchMedia('(max-width: 600px)')
+let tablets = window.matchMedia('(min-width: 600px) and (max-width: 1024px) ')
+let backArrowOne = document.querySelector(".back-arrow-one")
 let contact = document.querySelector(".contact")
+let backArrowTwo = document.querySelector(".back-arrow-two")
+let contactDetails = document.querySelector(".contact-details")
+
+// back btn
+backArrowOne.addEventListener("click", function (e){
+    chatArea.style.display = 'none'
+    sideBar.style.display = 'block'
+})
+
+backArrowTwo.addEventListener("click", function (e){
+    chatArea.style.display = 'block'
+    sideBar.style.display = 'block'
+    contactDetails.style.display ='none'
+})
+
+
 function smartFunction(smartPhones) {
     if (smartPhones.matches){
             document.body.addEventListener("click", function (e) {
@@ -27,7 +44,7 @@ function smartFunction(smartPhones) {
 
                     sideBar.style.display = 'none'
                     chatArea.style.display ='block'
-                    backArrow.style.display = 'block'           
+                    backArrowOne.style.display = 'block'           
                     // chatArea.style.width ='100%'
                     renderUserMessages(getUserMessage(id))
         
@@ -40,11 +57,44 @@ function smartFunction(smartPhones) {
     else{
         return false;
     }
+ 
 }
 smartFunction(smartPhones)
 
+function tabletFunction(tablets){
+    if(tablets.matches){
+        
+        document.body.addEventListener("click", function (e) {
+     
+            if (e.target.className !== "contact") {
+                return false;
+            }
+            else { 
+                contact = e.target;
+        
+                const id = contact.dataset.id
 
-// console.log(smartFunction(smartPhones));
+                sideBar.style.display = 'none'
+                chatArea.style.display ='block'
+                backArrowTwo.style.display = 'block'           
+                // chatArea.style.width ='100%'     
+                renderUserMessages(getUserMessage(id))
+    
+                renderUserInfo(getUserInfo(id))
+                console.log(id);
+            }
+
+            
+        })
+
+               
+    }
+    else{
+        return false;
+    }
+       
+}
+tabletFunction(tablets)
 
 document.body.addEventListener("click", function (e) {
      
@@ -93,14 +143,16 @@ const renderUserInfo = (userInfo) => {
    
     for (let i = 0; i < userInfo.length; i++) {
         contactsString+=`
-        
+        <div>
+        <div class="contact-info">
         <div class="img">
           <img src="${userInfo[i].image}" data-id=${userInfo[i].id} alt="rachael">
         </div>
-        <p class="contact-info">
+        <p class="contact-name">
         ${userInfo[i].name}
         </p>
-    
+        </div>
+        </div>
         `   
     } 
 
@@ -268,7 +320,7 @@ const GetContactDetails = (id) => {
     return null
 } 
 
-let contactDetails = document.querySelector(".contact-details")
+
 const infoBar = document.querySelector(".info-bar")
  const renderGetContactDetails = (id) => {
     let detailsString  = ""
@@ -277,7 +329,7 @@ const infoBar = document.querySelector(".info-bar")
 
         detailsString = `
         <div class="menu-img">
-            <img src="${GetContactDetails(id).image}" alt="RACHAEL">
+            <img src="${GetContactDetails(id).image}"> </img>
         </div>
 
         <div class="details-text">
@@ -293,15 +345,25 @@ const infoBar = document.querySelector(".info-bar")
    
  }
 
-//  event listener for the contact info
+ //  event listener for the contact info
 contactInfo.addEventListener("click", function (e){
-
-    // const id = contactDetails.dataset.id
     const id = e.target.dataset.id
      
     contactDetails.style.display ='block'
+    
+    if(tablets.matches){
+        btn.style.right = '3px'
+
+        if (sideBar.style.display === 'block'){
+
+            contactDetails.style.display = 'none'
+                                      
+         }  
+    }
     renderGetContactDetails(id)
-})  
+
+})
+ 
 
 // Close button
 let closeBtn = document.querySelector(".close-btn")
@@ -310,9 +372,5 @@ closeBtn.addEventListener("click", function (e){
     contactDetails.style.display ='none'
 })
  
-// back btn
-backArrow.addEventListener("click", function (e){
-    chatArea.style.display = 'none'
-    sideBar.style.display = 'block'
-})
+
 

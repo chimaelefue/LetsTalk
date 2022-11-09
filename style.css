@@ -21,7 +21,7 @@
     flex-direction: column;
     width: 410px;
     
-    padding: 20px 0px;
+    padding: 20px 8px;
     
     
     
@@ -79,62 +79,6 @@
     display: none;
     transition: 0.5s;
 }
-
-
-@media only screen and (max-width: 600px)  {
-    
-    .sidebar{
-        position: absolute;
-        top:0 ;
-        right: 0;
-        left:0;
-        bottom:0;
-        width: 100%;
-        height: 100%;
-    }
-    .chat-area{
-        
-        position: absolute;
-        top:0 ;
-        right: 0;
-        left:0;
-        bottom:0;
-        width: 100%;
-        height: 100%;
-        
-    }
-    .contact-details{
-        position: absolute;
-        top:0 ;
-        right: 0;
-        left:0;
-        bottom:0;
-        width: 100%;
-        height: 100%;
-        padding-top: 20px;
-    }
-    .default-page{
-        display: none;
-    }
-  }
-
-  /* @media only screen and (max-width: 768px) {
-    .sidebar{
-        width: 100%;
-        transition: 2s; */
-        
-    /* }
-    .default-page{
-        display: none;
-        
-    } */
-    /* .main-page{
-        
-        display: none;
-    }
-  } */
-
-
 
 .my-details{
     display: flex;
@@ -225,25 +169,33 @@ h3{
     float: right;
     margin-left: 20px;
     color: white;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
-.back-arrow{
-float: left;
-height: 60px;
-line-height: 60px;
-margin-right: 10px;
-display: none;
+.back-arrow-one{
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    margin-right: 10px;
+    display: none;
+}
+
+.back-arrow-two{
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    margin-right: 10px;
+    display: none;
 }
 
 .back-btn{
-display: inline-block;
-margin: 0 15px 0 15px;
-font-size: 24px;
-color: white;
-cursor: pointer;
-background-color:#0a1014 ;
-border: none;
+    display: inline-block;
+    margin: 0 15px 0 15px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    background-color:#0a1014 ;
+    border: none;
 }
 
 .contact-info{
@@ -265,6 +217,7 @@ border: none;
     height: 60px;
     line-height: 60px;
     margin-right: 10px;
+    display: flex;
 }
 
 #chat-options li {
@@ -347,6 +300,8 @@ border: none;
     box-sizing: border-box;
     position: relative;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #user-input {
@@ -443,3 +398,49 @@ border: none;
 .main-page  {width : 100%}
 .sidebar{ display: none;}
 } */
+
+@media only screen and (max-width: 600px)  {
+    
+    .sidebar{
+        position: absolute;
+        top:0 ;
+        right: 0;
+        left:0;
+        bottom:0;
+        width: 100%;
+        height: 100%;
+    }
+    .chat-area{
+        
+        position: absolute;
+        top:0 ;
+        right: 0;
+        left:0;
+        bottom:0;
+        width: 100%;
+        height: 100%;
+        
+    }
+    .contact-details{
+        position: absolute;
+        top:0 ;
+        right: 0;
+        left:0;
+        bottom:0;
+        width: 100%;
+        height: 100%;
+        padding-top: 20px;
+    }
+    .default-page{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 600px) and(max-width: 1024px) {
+    .sidebar{
+        width: 250px;
+    }
+    .main-section{
+        flex: 1;
+    }
+}
