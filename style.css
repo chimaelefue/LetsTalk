@@ -6,6 +6,8 @@
     box-sizing: border-box;
     font-family: 'Open Sans',sans-serif;
     color: white;
+    scrollbar-color:  red;
+
 }
 
 .container{
@@ -37,13 +39,15 @@
 }
 
 
-.main-page{
+ .main-page{
     display: flex;
     flex: 1;
     height: 100vh;
-    
+    background-color: green;
+    margin: 0;
+    padding: 0px;
 
-}
+} 
 
 /* Default page */
 
@@ -70,7 +74,7 @@
 /* contact-details */
 .contact-details{
     background-color: #0a1014;
-    width:410px;
+    
     height: 100%;
     padding: 2px 0;
     top: 0;
@@ -92,13 +96,16 @@
 .image img{
     margin: 0 auto;
     display: block;
-    width: 3rem;
+    width: 2.5rem;
     border-radius: 50%;
-    height: auto;
+    height: 2.5rem;
 }
 
 .contact-container{
+    
     overflow-y: scroll;
+     scrollbar-color:  red; 
+    scrollbar-width: thin; 
     transition: all 0.5s ease-in;
     height: 90vh
 }
@@ -133,9 +140,9 @@
 .img img{
 margin: 0 auto;
 display: block;
-width: 3rem;
+width: 2.5rem;
 border-radius: 50%;
-height: 3rem;
+height: 2.5rem;
 }
 
 h3{
@@ -176,21 +183,15 @@ h3{
     float: left;
     height: 60px;
     line-height: 60px;
-    margin-right: 10px;
+   
     display: none;
 }
 
-.back-arrow-two{
-    float: left;
-    height: 60px;
-    line-height: 60px;
-    margin-right: 10px;
-    display: none;
-}
+
 
 .back-btn{
     display: inline-block;
-    margin: 0 15px 0 15px;
+    margin: 0 2px 0 5px;
     font-size: 24px;
     color: white;
     cursor: pointer;
@@ -200,15 +201,16 @@ h3{
 
 .contact-info{
     display: flex;
-    margin-left: 5px;
+    /* margin-left: 5px; */
     padding: 5px;
     cursor:pointer;
 }
 
 .contact-info .contact-name{
     font-size: 16px;
-    height: 50px;
-    line-height: 60px;
+    height: auto;
+    margin-top: 10px;
+    
     
 }
 
@@ -233,7 +235,8 @@ h3{
     height: calc(100% - 120px);
     overflow-y: auto;
     padding-bottom: 10px;
-    
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -244,11 +247,12 @@ h3{
 .chat-msg{
    
     left: 0;
-    bottom: 0;
+    top: 0;
     width: 100%;
     height: auto;
-    padding: 30px 80px;
+    padding: 15px;
     box-sizing: border-box;
+    
 }
 
 .chat-msg p{
@@ -263,6 +267,8 @@ h3{
 
 .received-msg{
     background-color:#0a1014;;
+    margin-right: 10px;
+    
 }
 
 .received-msg:before {
@@ -279,6 +285,8 @@ h3{
 .sent-msg{
     background-color: #0a1014;
     float: right;
+    /* margin-left: 10px; */
+    
 }
 
 .sent-msg:after {
@@ -321,7 +329,7 @@ h3{
     font-size: 24px;
     background-color:#0a1014 ;
     color: white;
-    right: 10px;
+    right: 0;
     border: none;
     height: 60px;
     line-height: 60px;
@@ -386,18 +394,32 @@ h3{
     margin-top: 30px;
     
 }
+.info-bar{
+    margin-top: 25px;
+}
 
-/* for tablet
-@media only screen and (min-width: 600px) {
-    .main-page  {width : 100%}
-    .sidebar{ display: none;}
-} */
+.resize-handle{
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 2;
+    flex-basis: 3px;
+    box-sizing: border-box;
+    height: 100%;
+    border-left: 1px solid #423e3e;
+    border-right: 1px solid #423e3e;
+    cursor: col-resize;
+    user-select: none;
+    background-color: #423e3e;
+    margin: 0;
+    padding: 0;
+  
 
-/* for mobile
-@media only screen and (min-width: 768px) {
-.main-page  {width : 100%}
-.sidebar{ display: none;}
-} */
+  
+}
+
+
+
+
 
 @media only screen and (max-width: 600px)  {
     
@@ -427,20 +449,43 @@ h3{
         right: 0;
         left:0;
         bottom:0;
-        width: 100%;
+        width: 100vh;
         height: 100%;
         padding-top: 20px;
     }
     .default-page{
         display: none;
     }
+    
+    .contact-info img{
+        width: 2rem;
+        height: 2rem;
+
+    }
+    
 }
 
-@media only screen and (min-width: 600px) and(max-width: 1024px) {
+@media only screen  and(max-width: 900px) {
     .sidebar{
         width: 250px;
     }
-    .main-section{
-        flex: 1;
+    .main-page{
+        display: none;
     }
+    .contact-details{
+        position: relative;
+        margin-left: 0px;
+        top:0 ;
+        right: 0;
+        left:0;
+        bottom:0;
+        width: 100%;
+        min-width: 100%;
+        /* width: calc(100%-250px); */
+        height: 100%;
+        padding-top: 20px;
+        border-left: 1px solid #423e3e;
+        /* border: 2px solid red; */
+    }
+    
 }

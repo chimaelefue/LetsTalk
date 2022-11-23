@@ -10,11 +10,37 @@ const loggedInUserId = "0"
 let chatArea = document.querySelector(".chat-area");
 let sideBar = document.querySelector(".sidebar")
 let smartPhones = window.matchMedia('(max-width: 600px)')
-let tablets = window.matchMedia('(min-width: 600px) and (max-width: 1024px) ')
+let tablets = window.matchMedia(' (max-width: 900px) ')
 let backArrowOne = document.querySelector(".back-arrow-one")
 let contact = document.querySelector(".contact")
-let backArrowTwo = document.querySelector(".back-arrow-two")
+
 let contactDetails = document.querySelector(".contact-details")
+let resizeHandle = document.querySelector(".resize-handle")
+
+resizeHandle.addEventListener("mousedown", (event) => {
+    document.addEventListener("mousemove", resize, false);
+    document.addEventListener("mouseup", () => {
+        document.removeEventListener("mousemove", resize, false);
+    }, false);
+});
+
+function resize(e) {
+    const size = `${e.x}px`;
+    sideBar.style.flexBasis = size;
+
+}
+
+function tabletFunction(tablets){
+    if (tablets.matches){
+        resizeHandle.addEventListener('touchstart', (event) => {
+            document.addEventListener('touchmove', resize, false);
+            document.addEventListener('touchend', () => {
+                document.removeEventListener('touchmove', resize, false);
+            }, false);
+        });
+    }
+}
+tabletFunction(tablets)
 
 // back btn
 backArrowOne.addEventListener("click", function (e){
@@ -22,11 +48,11 @@ backArrowOne.addEventListener("click", function (e){
     sideBar.style.display = 'block'
 })
 
-backArrowTwo.addEventListener("click", function (e){
-    chatArea.style.display = 'block'
-    sideBar.style.display = 'block'
-    contactDetails.style.display ='none'
-})
+// backArrowTwo.addEventListener("click", function (e){
+//     chatArea.style.display = 'block'
+//     sideBar.style.display = 'block'
+//     contactDetails.style.display ='none'
+// })
 
 
 function smartFunction(smartPhones) {
@@ -61,40 +87,7 @@ function smartFunction(smartPhones) {
 }
 smartFunction(smartPhones)
 
-function tabletFunction(tablets){
-    if(tablets.matches){
-        
-        document.body.addEventListener("click", function (e) {
-     
-            if (e.target.className !== "contact") {
-                return false;
-            }
-            else { 
-                contact = e.target;
-        
-                const id = contact.dataset.id
 
-                sideBar.style.display = 'none'
-                chatArea.style.display ='block'
-                backArrowTwo.style.display = 'block'           
-                // chatArea.style.width ='100%'     
-                renderUserMessages(getUserMessage(id))
-    
-                renderUserInfo(getUserInfo(id))
-                console.log(id);
-            }
-
-            
-        })
-
-               
-    }
-    else{
-        return false;
-    }
-       
-}
-tabletFunction(tablets)
 
 document.body.addEventListener("click", function (e) {
      
@@ -126,6 +119,15 @@ document.body.addEventListener("click", function (e) {
     defaultPage .style.display = 'none'
     chatArea.style.display ='block'
     
+    if (tablets.matches){
+        if (contactDetails.style.display === 'block'){
+            chatArea.style.display = 'none'
+            
+        }
+        else{
+            return false
+        }
+    }
     
 })
 
@@ -196,17 +198,10 @@ const renderUserMessages = (usersMessages) => {
     }
 
    
-    msgContainer.innerHTML=messagesString
+    msgContainer.innerHTML = messagesString
     
 
 }
-//  Access input text
-// const btn= document.getElementById("btn");
-
-// btn.addEventListener('click', function(){
-//   var x = document.getElementById("user-input").value;
-//   alert(x);
-// });
 
 
 
@@ -231,7 +226,7 @@ function getSentMessage() {
     const textBox = document.getElementById("user-input");
     if(!textBox.value.trimStart()) alert("please type a message");
     else {
-        // inputArray.push(textBox.value)
+        //  inputArray.push(textBox.value)
         renderSentMessage(textBox.value)
         textBox.value = ""
     }
@@ -345,6 +340,8 @@ const infoBar = document.querySelector(".info-bar")
    
  }
 
+ let mainPage = document.querySelector("main-page")
+
  //  event listener for the contact info
 contactInfo.addEventListener("click", function (e){
     const id = e.target.dataset.id
@@ -352,13 +349,11 @@ contactInfo.addEventListener("click", function (e){
     contactDetails.style.display ='block'
     
     if(tablets.matches){
-        btn.style.right = '3px'
-
-        if (sideBar.style.display === 'block'){
-
-            contactDetails.style.display = 'none'
-                                      
-         }  
+        
+        //  mainPage.style.display = 'none'
+        chatArea.style.display = 'none'
+        // contactDetails.style.width = 'calc(100%-250px)'
+        
     }
     renderGetContactDetails(id)
 
@@ -370,6 +365,10 @@ let closeBtn = document.querySelector(".close-btn")
 closeBtn.addEventListener("click", function (e){
    
     contactDetails.style.display ='none'
+
+    if (tablets.matches){
+        chatArea.style.display ='block'
+    }
 })
  
 
